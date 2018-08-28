@@ -1,0 +1,36 @@
+
+
+public cnt
+
+id=getid("Archeage")
+ACW(id,1,1)
+
+KBD(VK_NUMPAD9,1)
+KBD(VK_NUMPAD9,2,100)
+sleep(1)
+KBD(VK_NUMPAD6,1)
+KBD(VK_NUMPAD6,2,100)
+
+THREAD roman()
+
+while true		//全体ループ
+	KBD(VK_UP,1)
+	KBD(VK_LEFT,1)
+wend		// *全体ループ
+
+PROCEDURE roman()
+while true
+	KBD(VK_NUMPAD6,1)
+	KBD(VK_NUMPAD6,2,100)
+	sleep(10)
+	cnt = cnt + 1
+	IF cnt <> 3 THEN
+		KBD(VK_NUMPAD9,1)
+		KBD(VK_NUMPAD9,2,100)
+		sleep(0.7)
+KBD(VK_NUMPAD6,1)
+		KBD(VK_NUMPAD6,2,100)
+		cnt = 0
+	ENDIF
+wend
+FEND

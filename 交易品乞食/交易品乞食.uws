@@ -1,0 +1,20 @@
+
+id=getid("Archeage")
+
+while true
+	fukidasi("コジコジｗ",50,50)
+	ifb chkimg("画像/"+"袋.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+		MMV(G_IMG_X, G_IMG_Y)
+		sleep(0.1)
+		BTN(LEFT, CLICK)
+		sleep(0.2)
+		ifb chkimg("画像/"+"確認.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+			fukidasi("2")
+			MMV(G_IMG_X, G_IMG_Y)
+			sleep(0.1)
+			BTN(LEFT, CLICK)
+		ELSE
+			sleep(0.1)
+		ENDIF
+	ENDIF
+wend		// *全体ループ

@@ -1,0 +1,119 @@
+public HP_X = 1			//HPバー座標
+public HP_Y = 1			// "
+
+
+
+
+id=getid("Archeage")
+ACW(id,1,1)
+
+while true		//全体ループ
+	while true	//HPバー探知ループ
+	
+		fukidasi("HPバー検索",50,50)
+		ifb chkimg("画像/"+"hpbar.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+			HP_X=G_IMG_X
+			HP_Y=G_IMG_Y
+			fukidasi("HPBARHIT")
+			mmv(HP_X+30,HP_Y+30,100)
+			sleep(1)
+			break
+		else
+			sleep(0.1)
+		endif
+	wend		//*HPバー探知ループ
+
+	while true	//メイン処理
+		while true //バフ対応処理
+			fukidasi("バフ確認",50,50)
+			ifb chkimg("画像/"+"ジャンプ.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+				fukidasi("ジャンプ",50,50)
+				KBD(VK_NUMPAD5,1)
+				KBD(VK_NUMPAD5,2,100)
+				sleep(0.3)
+				KBD(VK_NUMPAD5,1)
+				KBD(VK_NUMPAD5,2,100)
+				while true
+					ifb !chkimg("画像/"+"ジャンプ.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+						break 2
+					else
+						sleep(0.1)
+					endif
+				wend
+			endif
+			
+			ifb chkimg("画像/"+"下.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+				fukidasi("下",50,50)
+				KBD(VK_NUMPAD4,1)
+				KBD(VK_NUMPAD4,2,100)
+				sleep(0.3)
+				KBD(VK_NUMPAD4,1)
+				KBD(VK_NUMPAD4,2,100)
+				while true
+					ifb !chkimg("画像/"+"下.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+						break 2
+					else
+						sleep(0.1)
+					endif
+				wend
+			endif
+			
+			ifb chkimg("画像/"+"左.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+				fukidasi("左",50,50)
+				KBD(VK_NUMPAD1,1)
+				KBD(VK_NUMPAD1,2,100)
+				sleep(0.3)
+				KBD(VK_NUMPAD1,1)
+				KBD(VK_NUMPAD1,2,100)
+				while true
+					ifb !chkimg("画像/"+"左.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+						break 2
+					else
+						sleep(0.1)
+					endif
+				wend
+			endif
+
+			ifb chkimg("画像/"+"右.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+				fukidasi("右",50,50)
+				KBD(VK_NUMPAD2,1)
+				KBD(VK_NUMPAD2,2,100)
+				sleep(0.3)
+				KBD(VK_NUMPAD2,1)
+				KBD(VK_NUMPAD2,2,100)
+				while true
+					ifb !chkimg("画像/"+"右.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+						break 2
+					else
+						sleep(0.1)
+					endif
+				wend
+			endif
+	
+			ifb chkimg("画像/"+"逃亡.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+				fukidasi("逃亡",50,50)
+				KBD(VK_NUMPAD3,1)
+				KBD(VK_NUMPAD3,2,100)
+				sleep(0.3)
+				KBD(VK_NUMPAD3,1)
+				KBD(VK_NUMPAD3,2,100)
+				while true
+					ifb !chkimg("画像/"+"逃亡.bmp",0,1,1,1920,1080,1,IMG_MSK_BGR4)
+						break 2
+					else
+						sleep(0.1)
+					endif
+				wend
+			endif
+
+
+
+		wend	//*バフ対応処理
+	wend		//*メイン処理
+	
+	
+
+
+
+
+wend		// *全体ループ
