@@ -1,0 +1,11 @@
+
+
+id=getid("Archeage")
+ACW(id,1,1)
+
+while true		//全体ループ
+	KBD(VK_R,CLICK)
+	sleep(8)
+	KBD(VK_SPACE,CLICK)
+	sleep(1)
+wend		// *全体ループ
