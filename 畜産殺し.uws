@@ -1,0 +1,27 @@
+
+id=getid("Archeage")
+
+public X = 0
+public Y = 0
+
+THREAD SetPos()
+
+while true
+	ifb (GETKEYSTATE(VK_G))
+		MMV(X, Y)
+		sleep(0.1)
+		BTN(LEFT, CLICK)
+	ENDIF
+wend
+
+PROCEDURE SetPos()
+	while true
+		fukidasi("F2で確認位置指定", 50, 50)
+		ifb (GETKEYSTATE(VK_F2))
+			X = G_MOUSE_X
+			Y = G_MOUSE_Y
+		ENDIF
+	wend
+FEND
+
+	
